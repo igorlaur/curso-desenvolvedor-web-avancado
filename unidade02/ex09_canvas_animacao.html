@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>
+        
+        <script src="cake.js"></script>     
+        <script>
+			function desenhar() { // Vai ser chamada quando todo o meu arquivo for carregado
+                var canvas = new Canvas(document.body,600,400); // Largura, Altura
+                var meuCirculo = new Circle(100,{
+                    id:'meuCirculo',
+                    x: canvas.width/2,  // Assim ele ficará sempre no centro
+                    y: canvas.height/2, // Assim ele ficará sempre no centro
+                    stroke:'red',
+                    strokeWidth:10,
+                    endAngle:Math.PI*2 // Finaliza as ações do círculo
+                });
+
+                meuCirculo.addFrameListener( // Animações
+                    function(t, dt) {
+                        this.scale = Math.sin(t/500);
+                    }
+                )
+
+                canvas.appeand(meuCirculo); // Aqui eu chamo
+            } 
+            window.onload = desenhar;
+		</script>
+    </head>
+    
+    <body>
+	</body>    
+</html>

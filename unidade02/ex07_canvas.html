@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>
+
+        <script> 
+            function desenhar(){
+                var canvas = document.querySelector("#minhaTela"); /* Pegar elemento HTML no JS */
+                if(canvas.getContext){ // Identificar que existe elemento canvas
+                    var retangulo = canvas.getContext("2d");
+                    retangulo.fillStyle = "blue";
+                    retangulo.fillRect(50,50,300,400);
+                }
+            }
+            window.onload = desenhar; // Quando carregamento for completo da página, atribui desenhar
+        </script>
+        
+    </head>
+    
+    <body>
+        <canvas id="minhaTela" height="400" width="500">
+
+        </canvas>
+
+	</body>
+</html>
